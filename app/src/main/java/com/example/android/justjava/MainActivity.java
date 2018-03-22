@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setData(Uri.parse("mailto:"));
         intent.setType("*/*");
         intent.putExtra(Intent.EXTRA_EMAIL, "anubhavanandsingh@gmail.com");
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Coffee Order");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Coffee Order for "+nameOnCoffee);
         intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
@@ -88,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
      */
 
     private String createOrderSummary(int price ,boolean hasWhippedCream, boolean hasChocolate, String nameOnCoffee ){
-        String summary = nameOnCoffee;
+        String summary = getString(R.string.order_summary_name,nameOnCoffee);
         summary = summary +"\nAdd Whipped Cream? "+ hasWhippedCream +
                     "\nAdd Chocolate? "+ hasChocolate +
                     "\nQuantity : "+ quantity +
-                    "\nTotal : "+ price +"\nThank You!!";
+                    "\nTotal : "+ price +"\n"+getString(R.string.thank_you);
         return summary;
     }
 

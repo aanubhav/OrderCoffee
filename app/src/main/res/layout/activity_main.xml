@@ -29,8 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            style="@style/NewStyle"
 
-            android:text="Toppings"
+            android:text="@string/toppings"
             android:textAllCaps="true" />
 
 
@@ -62,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="quantity"
+            android:text="@string/quantity"
             android:textAllCaps="true" />
 
         <LinearLayout
